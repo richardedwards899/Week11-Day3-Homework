@@ -8,7 +8,6 @@ var onLoad = function(){
   request.addEventListener('load', function(){
 
     var beers = readBeers(this);
-    console.log(beers);
     loadIntoDropdown(beers);
     displayDetails(beers[0]);
   })//addEventListener
@@ -46,7 +45,6 @@ var displayDetails = function(beer){
   if (existingUl){
     div.replaceChild(ul, existingUl);
   } else {
-    console.log("here!")
     div.appendChild(ul);
   }
 }
@@ -68,7 +66,6 @@ var loadIntoDropdown = function(beers){
 
     selectorBox.onchange = function(){
       var index = this.selectedIndex;
-      console.log("You've selected beer at index: ", index);
       displayDetails(beers[index]);
     }
   })
